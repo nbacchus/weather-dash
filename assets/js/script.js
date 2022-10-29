@@ -20,3 +20,21 @@ let getCityWeather = function (city) {
       }
     });
 };
+
+// search function
+let searchSubmitHandler = function (event) {
+  // prevent refresh default
+  event.preventDefault();
+
+  // get value from input
+  let cityName = $("#cityname").val().trim();
+  if (cityName) {
+    getCityWeather(cityName);
+
+    // clear the search
+    $("#cityname").val("");
+  } else {
+    // if nothing was entered alert the user
+    alert("Please enter a city name");
+  }
+};
