@@ -5,39 +5,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
-        <link rel="stylesheet" href=".assets/css/style.css">
         <title>Nadia's Weather Dashboard</title>
     </head>
     <body>
-        <header>
-            <h1>
+        <header class="bg-primary">
+            <h1 class="text-center text-light p-4">
                 Nadia's Weather Dashboard
             </h1>
         </header>
 
-        <div>
-            <div>
-                <div>
+        <div class="m-4 p-4">
+            <div class="col-md-12">
+                <div class="row">
+
                     <!--search-->
-                    <div>
+                    <div class="col-md-3">
                         <h3>Search:</h3>
-                        <form>
-                            <input type="search" placeholder="Enter city here"/>
+                        <form id="searchform">
+                            <input type="search" placeholder="Enter city here" id="cityname"/>
                             <button type="submit">Submit</button>
                         </form>
+
+                     <!--search history-->
+                        <ul class="list-group" id="searchhistory">
+                        </ul>
+                    </div>
+                    
+                    <!--forecast-->
+                    <div class="col-md-9">
+                        <!--current weather-->
+                            <div class="card mt-2">
+                                <div class="card-body">
+                                    <div class="d-flex flex-row">
+                                        <h2 class="card-title align-self-center" id="main-city-name"></h2>
+                                    </div>
+                                    <h6 class="card-subtitle text-muted" id="city-temp">Temperature: </h6>
+                                    <h6 class="card-subtitle mt-3 text-muted" id="city-humid">Humidity: </h6>
+                                    <h6 class="card-subtitle mt-3 text-muted"  id="city-wind">Wind Speed: </h6>
+                                </div>
+                            </div>
+
+                        <!--5 day forecast-->
+                        <div>
+                            <h2 class="card-title">5-day Forecast</h2>
+                                <div class="row justify-content-between" id="five-day"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!--search history-->
-        <ul>
-        </ul>
-
-        <!--current weather-->
-
-        <!--5 day forecast-->
     </body>
 
-    <script src=".assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </html>
